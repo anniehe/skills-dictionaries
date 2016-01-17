@@ -41,19 +41,21 @@ def top_characters(input_string):
         character_count[letter] = character_count.get(letter, 0) + 1
 
     # Initialize new dictionary for character count as the key and list of letters as value.
+    characters_by_count = {}
+
     # For each key-value pair in the list of character_count tuples,
     # initialize value (empty list) for each character count (key) in the dictionary.
     # Add each letter to the list corresponding to its character count.
-    sorted_by_count = {}
     for pair in character_count.iteritems():
-        sorted_by_count.setdefault(pair[1], [])
-        sorted_by_count[pair[1]].append(pair[0])
+        letter, count = pair
+        characters_by_count.setdefault(count, [])
+        characters_by_count[count].append(letter)
 
     # The last item in the list of sorted character counts is the highest frequency.
-    highest_frequency = sorted(sorted_by_count)[-1]
+    highest_frequency = sorted(characters_by_count)[-1]
 
     # The letters corresponding to the highest frequency.
-    highest_frequency_letters = sorted_by_count[highest_frequency]
+    highest_frequency_letters = characters_by_count[highest_frequency]
 
     # Return the list of letters that appear the most in alphabetical order.
     return sorted(highest_frequency_letters)
@@ -74,7 +76,28 @@ def adv_alpha_sort_by_word_length(words):
 
     """
 
-    return []
+    word_lengths = {}
+
+    # Add each word and its word-length to word_lengths dictionary.
+    for word in words:
+        word_lengths[word] = len(word)
+
+    # Initialize new dictionary for word-length as the key
+    # and list of words of that word length as value.
+    words_by_length = {}
+
+    # For each key-value pair in the list of word_lengths tuples,
+    # initialize value (empty list) for each word-length (key) in the dictionary.
+    # Add each word to the list corresponding to its word-length.
+    # Sort list of words alphabetically for each word-length key.
+    for pair in word_lengths.iteritems():
+        word, length = pair
+        words_by_length.setdefault(length, [])
+        words_by_length[length].append(word)
+        words_by_length[length].sort()
+
+    # Return list of tuples (word length, list of words of that word length)
+    return words_by_length.items()
 
 
 ##############################################################################
