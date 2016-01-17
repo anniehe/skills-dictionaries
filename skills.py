@@ -150,7 +150,38 @@ def translate_to_pirate_talk(phrase):
 
     """
 
-    return ""
+    pirate_translation = {}
+
+    pirate_translation["sir"] = "matey"
+    pirate_translation["hotel"] = "fleabag inn"
+    pirate_translation["student"] = "swabbie"
+    pirate_translation["boy"] = "matey"
+    pirate_translation["professor"] = "foul blaggart"
+    pirate_translation["restaurant"] = "galley"
+    pirate_translation["your"] = "yer"
+    pirate_translation["excuse"] = "arr"
+    pirate_translation["students"] = "swabbies"
+    pirate_translation["are"] = "be"
+    pirate_translation["restroom"] = "head"
+    pirate_translation["my"] = "me"
+    pirate_translation["is"] = "be"
+    pirate_translation["man"] = "matey"
+
+    words = phrase.split()
+    pirate_talk = []
+
+    # Iterate through the list of words from the input phrase.
+    # If the word is found in the list of dictionary keys,
+    # add the value (Pirate translation) to resulting pirate_talk list.
+    # Otherwise, add the word to the resulting list.
+    for word in words:
+        if word in pirate_translation.iterkeys():
+            pirate_talk.append(pirate_translation.get(word))
+        else:
+            pirate_talk.append(word)
+
+    # Concatenate the resulting list of words and return pirate_talk as a string.
+    return " ".join(pirate_talk)
 
 
 def sort_by_word_length(words):
