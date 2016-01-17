@@ -121,7 +121,7 @@ def translate_to_pirate_talk(phrase):
 
     Here's a table of English to Pirate translations:
 
-   English     Pirate
+    English     Pirate
     ----------  ----------------
     sir         matey
     hotel       fleabag inn
@@ -198,7 +198,19 @@ def sort_by_word_length(words):
 
     """
 
-    return []
+    # sorted list of tuples
+    # tuple (length, list of words with that length)
+
+    # use iteritems?
+
+    word_length_dict = {}
+
+    print word_length_dict
+
+    # for key, value in word_length_dict.iteritems:
+    #     tuple_list.append((key, value))
+
+    # return sorted(sorted_list)
 
 
 def get_sum_zero_pairs(input_list):
