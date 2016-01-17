@@ -155,6 +155,9 @@ def translate_to_pirate_talk(phrase):
         >>> translate_to_pirate_talk("my student is not a man!")
         'me swabbie be not a man!'
 
+        >>> translate_to_pirate_talk("that student will be an excellent professor")
+        'that swabbie will be an excellent foul blaggart'
+
     """
 
     pirate_translation = {}
