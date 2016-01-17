@@ -247,7 +247,9 @@ def get_sum_zero_pairs(input_list):
 
     """
 
-    return []
+    # AHHHHHHHHHH
+
+    # return []
 
 
 ##############################################################################
