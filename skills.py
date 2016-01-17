@@ -205,19 +205,17 @@ def sort_by_word_length(words):
 
     """
 
-    # sorted list of tuples
-    # tuple (length, list of words with that length)
-
-    # use iteritems?
-
     word_length_dict = {}
 
-    print word_length_dict
+    # Iterate through input list of words.
+    # Initialize value (empty list) for each key (word length) in the dictionary.
+    # Add each word to the list (value) corresponding to their word length (key).
+    for word in words:
+        key = len(word)
+        word_length_dict.setdefault(key, []).append(word)
 
-    # for key, value in word_length_dict.iteritems:
-    #     tuple_list.append((key, value))
-
-    # return sorted(sorted_list)
+    # Return sorted list of tuples of key-value pairs.
+    return sorted(word_length_dict.items())
 
 
 def get_sum_zero_pairs(input_list):
