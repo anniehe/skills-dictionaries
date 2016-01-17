@@ -34,7 +34,7 @@ def without_duplicates(words):
 
     """
 
-    # sets are unique collections of items and removes duplicates
+    # Sets are unique collections of items and removes duplicates.
     return set(words)
 
 
@@ -64,7 +64,9 @@ def find_unique_common_items(list1, list2):
 
     """
 
-    return []
+    # Create sets of each list to remove duplicates and
+    # return the intersection of the common items.
+    return set(list1) & set(list2)
 
 
 def count_unique(input_string):
