@@ -111,7 +111,7 @@ def count_unique(input_string):
     # for word in distinct_words:
     #     word_dict[word] = 0
 
-    # # Iterate through the list of words from the input string.
+    # # Iterate over the list of words from the input string.
     # # Increment the count of the unique word each time it's found in the list of words.
     # for word in words:
     #     word_dict[word] += 1
@@ -177,7 +177,7 @@ def translate_to_pirate_talk(phrase):
     words = phrase.split()
     pirate_talk = []
 
-    # Iterate through the list of words from the input phrase.
+    # Iterate over the list of words from the input phrase.
     # If the word is found in the list of dictionary keys,
     # add the value (Pirate translation) to resulting pirate_talk list.
     # Otherwise, add the word to the resulting list.
@@ -207,7 +207,7 @@ def sort_by_word_length(words):
 
     word_length_dict = {}
 
-    # Iterate through input list of words.
+    # Iterate over input list of words.
     # Initialize value (empty list) for each key (word length) in the dictionary.
     # Add each word to the list (value) corresponding to their word length (key).
     for word in words:
@@ -247,9 +247,29 @@ def get_sum_zero_pairs(input_list):
 
     """
 
-    # AHHHHHHHHHH
+    sum_zero_pairs = {}
 
-    # return []
+    # Iterate over input list of numbers.
+    # Add the sorted pair of the number and its negative to the dictionary
+    # if the pair is found in the list. If 0 is found in the list, add [0, 0].
+    # Each unique number is the key in the pairs dictionary.
+    for num in input_list:
+        if num and -num in input_list:
+            sum_zero_pairs[num] = sorted([num, -num])
+        elif num == 0:
+            sum_zero_pairs[0] = [0, 0]
+
+    result = []
+    pairs = sum_zero_pairs.values()
+
+    # Iterate over list of values in the sum_zero_pairs dictionary.
+    # If the pair is not in the resulting list, add the pair to the list
+    # to return a final list of unique pairs summing to 0.
+    for pair in pairs:
+        if pair not in result:
+            result.append(pair)
+
+    return result
 
 
 ##############################################################################
