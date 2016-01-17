@@ -96,7 +96,20 @@ def count_unique(input_string):
 
     """
 
-    return {}
+    words = input_string.split()
+    distinct_words = set(words)
+    word_dict = {}
+
+    # Initialize count for each distinct word.
+    for word in distinct_words:
+        word_dict[word] = 0
+
+    # Iterate through the list of words from the input string.
+    # Increment the count of the unique word each time it's found in the list of words.
+    for word in words:
+        word_dict[word] += 1
+
+    return word_dict
 
 
 def translate_to_pirate_talk(phrase):
