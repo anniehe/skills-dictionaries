@@ -46,8 +46,7 @@ def top_characters(input_string):
     # For each key-value pair in the list of character_count tuples,
     # initialize value (empty list) for each character count (key) in the dictionary.
     # Add each letter to the list corresponding to its character count.
-    for pair in character_count.iteritems():
-        letter, count = pair
+    for letter, count in character_count.iteritems():
         characters_by_count.setdefault(count, [])
         characters_by_count[count].append(letter)
 
@@ -90,8 +89,7 @@ def adv_alpha_sort_by_word_length(words):
     # initialize value (empty list) for each word-length (key) in the dictionary.
     # Add each word to the list corresponding to its word-length.
     # Sort list of words alphabetically for each word-length key.
-    for pair in word_lengths.iteritems():
-        word, length = pair
+    for word, length in word_lengths.iteritems():
         words_by_length.setdefault(length, [])
         words_by_length[length].append(word)
         words_by_length[length].sort()
