@@ -160,22 +160,22 @@ def translate_to_pirate_talk(phrase):
 
     """
 
-    pirate_translation = {}
-
-    pirate_translation["sir"] = "matey"
-    pirate_translation["hotel"] = "fleabag inn"
-    pirate_translation["student"] = "swabbie"
-    pirate_translation["boy"] = "matey"
-    pirate_translation["professor"] = "foul blaggart"
-    pirate_translation["restaurant"] = "galley"
-    pirate_translation["your"] = "yer"
-    pirate_translation["excuse"] = "arr"
-    pirate_translation["students"] = "swabbies"
-    pirate_translation["are"] = "be"
-    pirate_translation["restroom"] = "head"
-    pirate_translation["my"] = "me"
-    pirate_translation["is"] = "be"
-    pirate_translation["man"] = "matey"
+    pirate_translation = {
+        "sir": "matey",
+        "hotel": "fleabag inn",
+        "student": "swabbie",
+        "boy": "matey",
+        "professor": "foul blaggart",
+        "restaurant": "galley",
+        "your": "yer",
+        "excuse": "arr",
+        "students": "swabbies",
+        "are": "be",
+        "restroom": "head",
+        "my": "me",
+        "is": "be",
+        "man": "matey"
+    }
 
     words = phrase.split()
     pirate_talk = []
